@@ -1,0 +1,12 @@
+registry:
+  image: registry:2
+
+proxy:
+  build: .
+  links:
+  - registry
+  ports:
+  - 80:80
+  environment:
+    AUTH_USERS: |
+      admin:$apr1$sR9Z8Xjj$YsZW.Q85ttqfXu1GMQkqe/
